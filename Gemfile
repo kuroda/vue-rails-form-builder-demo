@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'puma', '~> 3.7'
 
 gem 'webpacker'
+gem 'vue-form-for'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
