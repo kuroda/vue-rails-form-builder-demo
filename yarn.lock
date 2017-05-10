@@ -4234,9 +4234,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-data-scooper@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/vue-data-scooper/-/vue-data-scooper-0.2.0.tgz#b3c6aad5cea9eb0437eb6dcb0604b06378859bf1"
+vue-data-scooper@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vue-data-scooper/-/vue-data-scooper-0.3.0.tgz#da2730f4a938b7a3e2828f4a9645a686f12b9349"
   dependencies:
     lodash.get "^4.4.2"
     lodash.has "^4.5.2"
