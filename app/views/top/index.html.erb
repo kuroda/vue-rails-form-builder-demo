@@ -1,0 +1,26 @@
+<h1>Top#index</h1>
+
+<form id="customer-form">
+  <div>
+    <input type="text" v-model="customer.name" name="customer[name]" value="john">
+  </div>
+  <div>
+    <label>
+      <input type="radio" v-model="customer.plan" name="customer[plan]" value="A" checked>
+      A
+    </label>
+    <label>
+      <input type="radio" v-model="customer.plan" name="customer[plan]" value="B">
+      B
+    </label>
+  </div>
+  <div>
+    <textarea v-model="customer.remarks" name="customer[remarks]">Good</textarea>
+  </div>
+  <div v-cloak>
+    <hr>
+    <div>customer.name = "{{customer.name}}"</div>
+    <div>customer.plan = "{{customer.plan}}"</div>
+    <div>customer.remarks = "{{customer.remarks}}"</div>
+  </div>
+</form>
