@@ -3,6 +3,20 @@
   <%= f.text_field :name %>
 </div>
 <div>
+  <%= f.label :plan, "Plan" %>
+  <label>
+    <%= f.radio_button :plan, "A" %> A
+  </label>
+  <label>
+    <%= f.radio_button :plan, "B" %> B
+  </label>
+</div>
+<div>
+  <%= f.label :gender, "Gender" %>
+  <%= f.select :gender, [ [ "Male", "male" ], [ "Female", "female" ] ],
+    include_blank: true %>
+</div>
+<div>
   <label>
     <%= f.check_box :confirmed %> Confirmed
   </label>
@@ -13,4 +27,13 @@
 <div>
   <%= f.label :remarks, "Remarks" %>
   <%= f.text_area :remarks %>
+</div>
+<div v-cloak>
+    <hr>
+    <div>customer.name = "{{customer.name}}"</div>
+    <div>customer.plan = "{{customer.plan}}"</div>
+    <div>customer.gender = {{customer.gender}}</div>
+    <div>customer.confirmed = {{customer.confirmed}}</div>
+    <div>customer.approved = {{customer.approved}}</div>
+    <div>customer.remarks = "{{customer.remarks}}"</div>
 </div>

@@ -32,6 +32,6 @@ class CustomersController < ApplicationController
 
   private def customer_params
     params.require(:customer).permit(
-      :name, :plan, :confirmed, :approved, :remarks)
+      :name, :plan, :gender, :confirmed, :approved, :remarks)
   end
 end

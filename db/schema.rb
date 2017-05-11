@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170511073027) do
   create_table "customers", force: :cascade do |t|
     t.string "name", null: false
     t.string "plan", default: "A"
+    t.string "gender"
     t.text "remarks"
     t.boolean "confirmed", default: false, null: false
     t.boolean "approved", default: false, null: false
