@@ -1,0 +1,78 @@
+<h1>Top#index</h1>
+
+<form id="customer-form">
+  <div>
+    <input type="text" v-model="customer.name" name="customer[name]" value="john">
+  </div>
+  <div>
+    <label>
+      <input type="radio" v-model="customer.plan" name="customer[plan]" value="A" checked>
+      A
+    </label>
+    <label>
+      <input type="radio" v-model="customer.plan" name="customer[plan]" value="B">
+      B
+    </label>
+  </div>
+  <div>
+    <input type="hidden" v-model="customer.confirmed"
+      name="customer[confirmed]" value="0">
+    <label>
+      <input type="checkbox" v-model="customer.confirmed"
+        name="customer[confirmed]" value="1" checked>
+      Cofirmed
+    </label>
+  </div>
+  <div>
+    <input type="hidden" v-model="customer.approved"
+      name="customer[approved]" value="0">
+    <label>
+      <input type="checkbox" v-model="customer.approved"
+        name="customer[approved]" value="1">
+      Approved
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="checkbox" v-model="customer.colors"
+       name="customer[colors]" value="red" checked> Red
+    </label>
+    <label>
+      <input type="checkbox" v-model="customer.colors"
+       name="customer[colors]" value="blue"> Blue
+    </label>
+    <label>
+      <input type="checkbox" v-model="customer.colors"
+       name="customer[colors]" value="green" checked> Green
+    </label>
+  </div>
+  <div>
+    <select v-model="customer.gender" name="customer[gender]">
+      <option value="male">Male</option>
+      <option value="female" selected>Female</option>
+    </select>
+  </div>
+  <div>
+    <select v-model="customer.tags" name="customer[tags]" multiple>
+      <option value="x" selected>x</option>
+      <option value="y">Y</option>
+      <option value="z" selected>Z</option>
+    </select>
+  </div>
+  <div>
+    <textarea v-model="customer.remarks" name="customer[remarks]">Good</textarea>
+  </div>
+  <div v-cloak>
+    <hr>
+    <div>customer.name = "{{customer.name}}"</div>
+    <div>customer.plan = "{{customer.plan}}"</div>
+    <div>customer.confirmed = {{customer.confirmed}}</div>
+    <div>customer.approved = {{customer.approved}}</div>
+    <div>customer.colors = {{customer.colors}}</div>
+    <div>customer.gender = {{customer.gender}}</div>
+    <div>customer.tags = {{customer.tags}}</div>
+    <div>customer.remarks = "{{customer.remarks}}"</div>
+  </div>
+</form>
+
+<%= javascript_pack_tag 'top/static' %>
