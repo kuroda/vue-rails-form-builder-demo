@@ -1,0 +1,28 @@
+<h1>List of Customers</h1>
+
+<div>
+  <%= link_to "New customer", :new_customer %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Plan</th>
+      <th>Confirmed</th>
+      <th>Approved</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td><%= customer.plan %></td>
+      <td><%= customer.confirmed? %></td>
+      <td><%= customer.approved? %></td>
+      <td><%= link_to "Edit", [ :edit, customer ] %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
