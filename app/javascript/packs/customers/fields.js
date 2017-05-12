@@ -5,6 +5,9 @@ Vue.use(VueDataScooper)
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({
-    el: "#customer-form"
+    el: "#customer-form",
+    data: {
+      open: false
+    }
   })
 })

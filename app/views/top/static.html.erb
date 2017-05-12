@@ -62,16 +62,19 @@
   <div>
     <textarea v-model="customer.remarks" name="customer[remarks]">Good</textarea>
   </div>
-  <div v-cloak>
-    <hr>
-    <div>customer.name = "{{customer.name}}"</div>
-    <div>customer.plan = "{{customer.plan}}"</div>
-    <div>customer.confirmed = {{customer.confirmed}}</div>
-    <div>customer.approved = {{customer.approved}}</div>
-    <div>customer.colors = {{customer.colors}}</div>
-    <div>customer.gender = {{customer.gender}}</div>
-    <div>customer.tags = {{customer.tags}}</div>
-    <div>customer.remarks = "{{customer.remarks}}"</div>
+  <div v-cloak style="border: solid 1px black; padding: 10px; margin: 10px">
+    <button type="button" @click="open = true" v-if="!open">Show Vue component data</button>
+    <button type="button" @click="open = false" v-if="open">Hide</button>
+    <div v-if="open">
+      <div>customer.name = "{{customer.name}}"</div>
+      <div>customer.plan = "{{customer.plan}}"</div>
+      <div>customer.confirmed = {{customer.confirmed}}</div>
+      <div>customer.approved = {{customer.approved}}</div>
+      <div>customer.colors = {{customer.colors}}</div>
+      <div>customer.gender = {{customer.gender}}</div>
+      <div>customer.tags = {{customer.tags}}</div>
+      <div>customer.remarks = "{{customer.remarks}}"</div>
+    </div>
   </div>
 </form>
 
