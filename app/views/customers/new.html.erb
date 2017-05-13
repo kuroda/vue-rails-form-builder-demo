@@ -4,7 +4,7 @@
   <%= link_to "List of customers", :customers %>
 </div>
 
-<%= vue_form_for @customer, html: { id: "customer-form" } do |f| %>
+<%= vue_form_with model: @customer, id: "customer-form" do |f| %>
   <%= render "fields", f: f %>
   <div>
     <%= f.submit "Create" %>
