@@ -1,8 +1,8 @@
-# vue-form-for-example
+# vue-rails-form-builder-demo
 
-This is an example of Rails application using these libraries:
+This is a Rails demo application using these libraries:
 
-* [vue-form-for](https://github.com/kuroda/vue-form-for) -
+* [vue-rails-form-builder](https://github.com/kuroda/vue-rails-form-builder) -
   A custom Rails form builder for Vue.js
 * [vue-data-scooper](https://github.com/kuroda/vue-data-scooper) -
   A Vue.js plugin to initialize the Vue instance data from form elements
@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
 ## Installation
 
 ```bash
-git clone https://github.com/kuroda/vue-form-for-example.git
-cd vue-form-for-example
+git clone https://github.com/kuroda/vue-rails-form-builder-demo.git
+cd vue-rails-form-builder-demo
 bundle
 yarn
 bin/rake db:setup
