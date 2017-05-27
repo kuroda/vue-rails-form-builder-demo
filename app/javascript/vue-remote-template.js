@@ -1,3 +1,4 @@
+import Vue from "vue/dist/vue.esm"
 import Axios from "axios"
 import { getInitialData } from "vue-data-scooper"
 
@@ -6,9 +7,11 @@ const VueRemoteTemplate = {
     return h(this.dynamicComponent)
   },
   data: function() {
+    const root = document.querySelector(this.$options.el)
     return {
       template: undefined,
-      path: undefined
+      path: undefined,
+      initialPath: root.dataset.initialPath
     }
   },
   watch: {
@@ -51,6 +54,9 @@ const VueRemoteTemplate = {
       let doc = parser.parseFromString(this.template, "text/html")
       return getInitialData(doc)
     }
+  },
+  mounted: function() {
+    this.path = this.initialPath
   }
 }
 
