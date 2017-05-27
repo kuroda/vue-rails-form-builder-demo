@@ -7,13 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     el: "#app",
     data: {
       msg: "Hello",
-      template: undefined
+      template: Vue.compile("<div>Loading...</div>").render
     },
     render: function(h) {
-      if (this.template)
-        return this.template()
-      else
-        return h("div", "Loading...")
+      return this.template()
     },
     mounted: function() {
       this.template = Vue.compile('<div><span>{{ msg }}</span></div>').render
