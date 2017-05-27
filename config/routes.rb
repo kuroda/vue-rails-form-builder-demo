@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   get 'spa' => 'top#spa', as: :spa
 
   resources :customers, except: [ :show, :destroy ]
+  namespace :api do
+    resources :customers, except: [ :show, :destroy ]
+  end
 end

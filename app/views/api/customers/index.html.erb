@@ -1,0 +1,30 @@
+<div>
+  <div>
+    <%= link_to "New customer", :new_customer %>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Plan</th>
+        <th>Gender</th>
+        <th>Confirmed</th>
+        <th>Approved</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.plan %></td>
+        <td><%= customer.gender %></td>
+        <td><%= customer.confirmed? %></td>
+        <td><%= customer.approved? %></td>
+        <td><%= link_to "Edit", [ :edit, customer ] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

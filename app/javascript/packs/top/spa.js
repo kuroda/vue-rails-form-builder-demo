@@ -1,19 +1,35 @@
-import Vue from 'vue/dist/vue.esm'
+import Vue from "vue/dist/vue.esm"
+import Axios from "axios"
 
 Vue.config.productionTip = false
 
 document.addEventListener("DOMContentLoaded", () => {
+  let templateRenderFns = [];
+
   new Vue({
     el: "#app",
     data: {
-      msg: "Hello",
-      template: Vue.compile("<div>Loading...</div>").render
+      template: undefined,
+      renderer: Vue.compile("<div>Loading...</div>").render
     },
     render: function(h) {
-      return this.template()
+      return this.renderer()
     },
+    staticRenderFns: templateRenderFns,
     mounted: function() {
-      this.template = Vue.compile('<div><span>{{ msg }}</span></div>').render
+      let self = this
+      Axios.get("/api/customers")
+        .then(function(response) {
+          let compiled = Vue.compile(response.data)
+          self.renderer = compiled.render
+          templateRenderFns.length = 0
+          for (let i in compiled.staticRenderFns) {
+          	templateRenderFns.push(compiled.staticRenderFns[i])
+          }
+        })
+        .catch(function(error) {
+          console.log(error)
+        })
     }
   })
 })
