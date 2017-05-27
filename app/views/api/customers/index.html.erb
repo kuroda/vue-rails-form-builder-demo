@@ -22,7 +22,9 @@
         <td><%= customer.gender %></td>
         <td><%= customer.confirmed? %></td>
         <td><%= customer.approved? %></td>
-        <td><%= link_to "Edit", [ :edit, customer ] %></td>
+        <td>
+          <span @click="path = '<%= edit_api_customer_path(customer) %>'">Edit</span>
+        </td>
       </tr>
       <% end %>
     </tbody>

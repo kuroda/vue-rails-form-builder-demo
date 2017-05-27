@@ -8,4 +8,9 @@ class Api::CustomersController < ApplicationController
     @customer = Customer.new
     render action: "new", layout: false
   end
+
+  def edit
+    @customer = Customer.find(params[:id])
+    render action: "edit", layout: false
+  end
 end
