@@ -1,6 +1,6 @@
 import Vue from "vue/dist/vue.esm"
 import Axios from "axios"
-import { getInitialData } from "vue-data-scooper"
+import { getInitialData } from "./vue-data-scooper"
 
 const VueRemoteTemplate = {
   render: function(h) {
@@ -35,7 +35,6 @@ const VueRemoteTemplate = {
           data: function() {
             let obj = Object.assign({}, self.initialData)
             obj.path = undefined
-            obj.open = false
             return obj
           },
           watch: {
@@ -50,9 +49,11 @@ const VueRemoteTemplate = {
       }
     },
     initialData: function() {
-      let parser = new DOMParser()
-      let doc = parser.parseFromString(this.template, "text/html")
-      return getInitialData(doc)
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(this.template, "text/html")
+      const root = doc.querySelector("body > *")
+
+      return getInitialData(root)
     }
   },
   mounted: function() {
