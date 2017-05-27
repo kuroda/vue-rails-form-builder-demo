@@ -5,8 +5,18 @@ Vue.config.productionTip = false
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     el: "#app",
-    template: "<div>Loading...</div>",
     data: {
+      msg: "Hello",
+      template: undefined
+    },
+    render: function(h) {
+      if (this.template)
+        return this.template()
+      else
+        return h("div", "Loading...")
+    },
+    mounted: function() {
+      this.template = Vue.compile('<div><span>{{ msg }}</span></div>').render
     }
   })
 })
