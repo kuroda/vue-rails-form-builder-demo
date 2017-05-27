@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     el: "#app",
     data: {
       template: "<div>Loading...</div>",
-      initialData: {},
       path: undefined
     },
     render: function(h) {
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dynamicComponent: function() {
         let self = this
         return {
-          template: this.template,
+          template: self.template,
           data: function() {
             let obj = Object.assign({}, self.initialData)
             obj.path = undefined
@@ -35,6 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           }
         }
+      },
+      initialData: function() {
+        let parser = new DOMParser()
+        let doc = parser.parseFromString(this.template, "text/html")
+        return getInitialData(doc)
       }
     },
     mounted: function() {
@@ -46,10 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
         Axios.get(val)
           .then(function(response) {
             self.template = response.data
-
-            let parser = new DOMParser()
-            let doc = parser.parseFromString(self.template, "text/html")
-            self.initialData = getInitialData(doc)
           })
           .catch(function(error) {
             console.log(error)
