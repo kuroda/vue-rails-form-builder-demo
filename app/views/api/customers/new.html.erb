@@ -1,14 +1,12 @@
-<h1>Form for new customer</h1>
-
 <div>
-  <%= link_to "List of customers", :customers %>
-</div>
-
-<%= vue_form_with model: @customer, id: "customer-form" do |f| %>
-  <%= render "fields", f: f %>
   <div>
-    <%= f.submit "Create" %>
+    <span @click="path = '/api/customers'">List of customer</span>
   </div>
-<% end %>
 
-<%= javascript_pack_tag 'customers/fields' %>
+  <%= vue_form_with model: @customer, id: "customer-form" do |f| %>
+    <%= render "fields", f: f %>
+    <div>
+      <%= f.submit "Create" %>
+    </div>
+  <% end %>
+</div>
