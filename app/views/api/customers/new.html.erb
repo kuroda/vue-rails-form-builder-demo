@@ -1,6 +1,6 @@
 <div data-initial-data='{ "open": false }'>
   <div>
-    <span @click="path = '/api/customers'">List of customer</span>
+    <span @click="visit('/api/customers')">List of customer</span>
   </div>
 
   <%= vue_form_with model: @customer, id: "customer-form" do |f| %>

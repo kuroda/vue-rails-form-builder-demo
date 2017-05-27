@@ -1,6 +1,6 @@
 <div>
   <div>
-    <span @click="path = '/api/customers/new'">New customer</span>
+    <span @click="visit('/api/customers/new')">New customer</span>
   </div>
 
   <table>
@@ -23,7 +23,7 @@
         <td><%= customer.confirmed? %></td>
         <td><%= customer.approved? %></td>
         <td>
-          <span @click="path = '<%= edit_api_customer_path(customer) %>'">Edit</span>
+          <span @click="visit('<%= edit_api_customer_path(customer) %>')">Edit</span>
         </td>
       </tr>
       <% end %>

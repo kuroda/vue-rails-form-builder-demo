@@ -33,13 +33,11 @@ const VueRemoteTemplate = {
         return {
           template: self.template,
           data: function() {
-            let obj = Object.assign({}, self.initialData)
-            obj.path = undefined
-            return obj
+            return Object.assign({}, self.initialData)
           },
-          watch: {
-            path: function(val, _oldVal) {
-              self.path = val
+          methods: {
+            visit: function(path) {
+              self.path = path
             }
           }
         }
