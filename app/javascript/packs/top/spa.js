@@ -1,9 +1,6 @@
 import Vue from "vue/dist/vue.esm"
 import { getInitialData } from "vue-data-scooper"
 import Axios from "axios"
-import get from "lodash.get"
-import has from "lodash.has"
-import set from "lodash.set"
 
 Vue.config.productionTip = false
 
