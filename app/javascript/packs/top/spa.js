@@ -10,7 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
       template: "<div>Loading...</div>"
     },
     render: function(h) {
-      return h({ template: this.template, data: {} })
+      return h(this.dynamicComponent)
+    },
+    computed: {
+      dynamicComponent: function() {
+        return {
+          template: this.template,
+          data: function() { return {} }
+        }
+      }
     },
     mounted: function() {
       let self = this
