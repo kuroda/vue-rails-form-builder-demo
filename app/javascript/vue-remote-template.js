@@ -36,8 +36,13 @@ const VueRemoteTemplate = {
             return Object.assign({}, self.initialData)
           },
           methods: {
-            visit: function(path) {
-              self.path = path
+            visit: function(templatePath, url) {
+              if (!url) url = templatePath
+              window.history.pushState({ path: templatePath }, "", url)
+              self.path = templatePath
+            },
+            show: function(templatePath) {
+              self.path = templatePath
             }
           }
         }
@@ -55,7 +60,16 @@ const VueRemoteTemplate = {
     }
   },
   mounted: function() {
-    this.path = this.initialPath
+    const self = this
+
+    self.path = self.initialPath
+
+    window.onpopstate = function(event) {
+      if (event.state && event.state.path)
+        self.path = event.state.path
+      else
+        self.path = self.initialPath
+    }
   }
 }
 

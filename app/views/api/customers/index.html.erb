@@ -1,6 +1,14 @@
+<%
+def edit_link(customer)
+  templatePath = edit_api_customer_path(customer)
+  url = "#customers/#{customer.id}/edit"
+  content_tag(:span, "Edit",
+    "@click" => "visit('#{templatePath}', '#{url}')".html_safe)
+end
+%>
 <div>
   <div>
-    <span @click="visit('/api/customers/new')">New customer</span>
+    <span @click="visit('/api/customers/new', '#customers/new')">New customer</span>
   </div>
 
   <table>
@@ -22,9 +30,7 @@
         <td><%= customer.gender %></td>
         <td><%= customer.confirmed? %></td>
         <td><%= customer.approved? %></td>
-        <td>
-          <span @click="visit('<%= edit_api_customer_path(customer) %>')">Edit</span>
-        </td>
+        <td><%= edit_link(customer) %></td>
       </tr>
       <% end %>
     </tbody>
