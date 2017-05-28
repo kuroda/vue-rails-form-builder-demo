@@ -6,6 +6,8 @@ This is a Rails demo application using these libraries:
   A custom Rails form builder for Vue.js
 * [vue-data-scooper](https://github.com/kuroda/vue-data-scooper) -
   A Vue.js plugin to initialize the Vue instance data from form elements
+* [vue-remote-template](https://github.com/kuroda/vue-remote-template) -
+  A Vue.js mixin to fetch template via Ajax
 
 This application illustrates how we can combine the _traditional_ form builder
 with Vue.js components.
