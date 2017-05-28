@@ -4460,11 +4460,12 @@ vue-loader@^12.0.3:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-remote-template@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/vue-remote-template/-/vue-remote-template-0.2.0.tgz#37cab8382a9aa78bfe2117b8f6a74a93df831e61"
+vue-remote-template@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vue-remote-template/-/vue-remote-template-0.3.0.tgz#bef7d7bb28d0ea11185c55e5e9fc8c66ade14a5d"
   dependencies:
     axios "^0.16.1"
+    vue "^2.3.3"
     vue-data-scooper "^0.5.0"
 
 vue-style-loader@^3.0.0:
