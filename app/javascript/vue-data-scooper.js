@@ -46,8 +46,10 @@ export const getInitialData = function(doc) {
   const inputs = doc.querySelectorAll("[v-model]")
   const obj = {}
 
-  if (doc.dataset && doc.dataset.initialData) {
-    Object.assign(obj, JSON.parse(doc.dataset.initialData))
+  if (doc.dataset) {
+    for (let key in doc.dataset) {
+      obj[key] = JSON.parse(doc.dataset[key])
+    }
   }
 
   for (let i = 0; i < inputs.length; i++) {
