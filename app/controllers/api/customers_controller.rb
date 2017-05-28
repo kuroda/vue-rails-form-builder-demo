@@ -16,10 +16,23 @@ class Api::CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      response.headers["x-template-path"] = api_customers_path
-      response.headers["x-push-state-url"] = "#"
+      render json: {
+        templatePath: api_customers_path
+      }
     else
       render action: "new"
+    end
+  end
+
+  def update
+    @customer = Customer.find(params[:id])
+    @customer.assign_attributes(customer_params)
+    if @customer.save
+      render json: {
+        templatePath: api_customers_path
+      }
+    else
+      render action: "edit"
     end
   end
 

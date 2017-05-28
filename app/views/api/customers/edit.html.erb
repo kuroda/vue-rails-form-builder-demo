@@ -10,7 +10,7 @@
     <span @click="visit('/api/customers')">List of customer</span>
   </div>
 
-  <%= vue_form_with model: @customer, id: "customer-form",
+  <%= vue_form_with model: [ :api, @customer ], id: "customer-form",
     html: { "@submit.prevent" => "submit" } do |f| %>
     <%= render "fields", f: f %>
     <div>

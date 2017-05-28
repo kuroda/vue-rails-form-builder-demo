@@ -5,21 +5,8 @@ Vue.config.productionTip = false
 let Comp = Vue.extend({ mixins: [ VueRemoteTemplate ] })
 
 document.addEventListener("DOMContentLoaded", () => {
-  const newForm = {
-    methods: {
-      submit: function(event) {
-        console.log("new form!")
-      }
-    }
-  }
-
-  const editForm = {
-    methods: {
-      submit: function(event) {
-        console.log("edit form!")
-      }
-    }
-  }
+  const newForm = {}
+  const editForm = {}
 
   new Comp({
     el: "#app",
