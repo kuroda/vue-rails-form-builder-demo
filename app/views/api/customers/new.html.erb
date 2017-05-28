@@ -1,9 +1,17 @@
-<div data-open='false'>
+<%
+  metadata = {
+    "title" => "New Customer",
+    "handler" => "newForm",
+    "url" => "#customers/new"
+  }
+%>
+<div data-meta='<%= metadata.to_json %>' data-open='false'>
   <div>
-    <span @click="visit('/api/customers', '#')">List of customer</span>
+    <span @click="visit('/api/customers')">List of customer</span>
   </div>
 
-  <%= vue_form_with model: @customer, id: "customer-form" do |f| %>
+  <%= vue_form_with model: [ :api, @customer ], id: "customer-form",
+    html: { "@submit.prevent" => "submit" } do |f| %>
     <%= render "fields", f: f %>
     <div>
       <%= f.submit "Create" %>

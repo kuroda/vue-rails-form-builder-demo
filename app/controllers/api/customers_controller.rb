@@ -3,15 +3,28 @@ class Api::CustomersController < ApplicationController
 
   def index
     @customers = Customer.order(:id)
-    response.headers['document-title'] = "List of customers"
   end
 
   def new
     @customer = Customer.new
-    response.headers['document-title'] = "New customer"
   end
 
   def edit
     @customer = Customer.find(params[:id])
+  end
+
+  def create
+    @customer = Customer.new(customer_params)
+    if @customer.save
+      response.headers["x-template-path"] = api_customers_path
+      response.headers["x-push-state-url"] = "#"
+    else
+      render action: "new"
+    end
+  end
+
+  private def customer_params
+    params.require(:customer).permit(
+      :name, :plan, :gender, :confirmed, :approved, :remarks)
   end
 end

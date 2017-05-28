@@ -1,14 +1,27 @@
 <%
-def edit_link(customer)
-  templatePath = edit_api_customer_path(customer)
-  url = "#customers/#{customer.id}/edit"
-  content_tag(:span, "Edit",
-    "@click" => "visit('#{templatePath}', '#{url}')".html_safe)
-end
+  metadata = {
+    "title" => "List of customers",
+    "handler" => "index",
+    "url" => "#customers"
+  }
+
+  def new_link
+    templatePath = new_api_customer_path
+    url = "#customers/new"
+    content_tag(:span, "New customer",
+      "@click" => "visit('#{templatePath}')".html_safe)
+  end
+
+  def edit_link(customer)
+    templatePath = edit_api_customer_path(customer)
+    url = "#customers/#{customer.id}/edit"
+    content_tag(:span, "Edit",
+      "@click" => "visit('#{templatePath}')".html_safe)
+  end
 %>
-<div>
+<div data-meta='<%= metadata.to_json %>'>
   <div>
-    <span @click="visit('/api/customers/new', '#customers/new')">New customer</span>
+    <%= new_link %>
   </div>
 
   <table>
