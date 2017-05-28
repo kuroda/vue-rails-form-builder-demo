@@ -1,6 +1,6 @@
 import Vue from "vue/dist/vue.esm"
 import Axios from "axios"
-import { getInitialData } from "./vue-data-scooper"
+import { getInitialData } from "vue-data-scooper"
 
 const VueRemoteTemplate = {
   render: function(h) {
