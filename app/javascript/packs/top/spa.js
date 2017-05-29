@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   new Comp({
     el: "#app",
     data: {
-      initialHandlerName: "index",
+      templatePath: "/api/customers",
+      handlerName: "index",
       handlers: {
         index: {},
         newForm: newForm,
