@@ -7,7 +7,7 @@
 %>
 <div data-meta='<%= metadata.to_json %>' data-open='false'>
   <div>
-    <span @click="visit('/api/customers')">List of customer</span>
+    <span @click="visit('/api/customers')" class="link">List of customer</span>
   </div>
 
   <%= vue_form_with model: [ :api, @customer ], id: "customer-form",

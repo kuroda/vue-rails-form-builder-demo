@@ -1,3 +1,9 @@
 [v-cloak] {
   display: none;
 }
+
+span.link {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
