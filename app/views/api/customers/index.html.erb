@@ -1,10 +1,4 @@
 <%
-  metadata = {
-    "title" => "List of customers",
-    "handler" => "index",
-    "url" => "#customers"
-  }
-
   def new_link
     templatePath = new_api_customer_path
     url = "#customers/new"
@@ -19,7 +13,8 @@
       "@click" => "visit('#{templatePath}')".html_safe)
   end
 %>
-<div data-meta='<%= metadata.to_json %>'>
+<div data-title="List of customers" data-extension="index"
+  data-url="#customers">
   <div>
     <%= new_link %>
   </div>

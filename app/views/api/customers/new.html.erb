@@ -1,11 +1,4 @@
-<%
-  metadata = {
-    "title" => "New Customer",
-    "handler" => "newForm",
-    "url" => "#customers/new"
-  }
-%>
-<div data-meta='<%= metadata.to_json %>' data-open='false'>
+<div data-title="New Customer" data-extension="newForm">
   <div>
     <span @click="visit('/api/customers')" class="link">List of customer</span>
   </div>

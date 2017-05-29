@@ -4434,9 +4434,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-data-scooper@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/vue-data-scooper/-/vue-data-scooper-0.5.0.tgz#0db43ea0a6a2fd4c655a48e9cd7a030668a3f277"
+vue-data-scooper@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/vue-data-scooper/-/vue-data-scooper-0.6.0.tgz#aba1a70e3bb6553c2b6ed5ab749a3f9b1122809a"
   dependencies:
     lodash.get "^4.4.2"
     lodash.has "^4.5.2"
@@ -4464,14 +4464,14 @@ vue-loader@^12.0.3:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-remote-template@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/vue-remote-template/-/vue-remote-template-0.5.0.tgz#7b6adc095c1cd81c6a40cf89d2605a7006aa852a"
+vue-remote-template@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/vue-remote-template/-/vue-remote-template-0.6.0.tgz#2052ed4abc24308f47e47f46ef037fcab88bc9e4"
   dependencies:
     axios "^0.16.1"
     form-serialize "^0.7.1"
     vue "^2.3.3"
-    vue-data-scooper "^0.5.0"
+    vue-data-scooper "^0.6.0"
 
 vue-style-loader@^3.0.0:
   version "3.0.1"
