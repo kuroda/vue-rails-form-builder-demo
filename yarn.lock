@@ -4464,9 +4464,9 @@ vue-loader@^12.0.3:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-remote-template@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/vue-remote-template/-/vue-remote-template-0.6.0.tgz#2052ed4abc24308f47e47f46ef037fcab88bc9e4"
+vue-remote-template@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/vue-remote-template/-/vue-remote-template-0.7.0.tgz#b9976cee86c65e127988168a6bb5998f08632a02"
   dependencies:
     axios "^0.16.1"
     form-serialize "^0.7.1"

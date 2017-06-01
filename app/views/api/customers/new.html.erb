@@ -1,6 +1,6 @@
 <div data-title="New Customer" data-extension="newForm">
   <div>
-    <span @click="visit('/api/customers')" class="link">List of customer</span>
+    <%= link_to "List of customers", :api_customers, "@click.prevent" => "visit" %>
   </div>
 
   <%= vue_form_with model: [ :api, @customer ], id: "customer-form",

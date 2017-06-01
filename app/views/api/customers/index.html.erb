@@ -1,22 +1,7 @@
-<%
-  def new_link
-    templatePath = new_api_customer_path
-    url = "#customers/new"
-    content_tag(:span, "New customer", class: "link",
-      "@click" => "visit('#{templatePath}')".html_safe)
-  end
-
-  def edit_link(customer)
-    templatePath = edit_api_customer_path(customer)
-    url = "#customers/#{customer.id}/edit"
-    content_tag(:span, "Edit", class: "link",
-      "@click" => "visit('#{templatePath}')".html_safe)
-  end
-%>
 <div data-title="List of customers" data-extension="index"
   data-url="#customers">
   <div>
-    <%= new_link %>
+    <%= link_to "New customer", :new_api_customer, "@click.prevent" => "visit" %>
   </div>
 
   <table>
@@ -38,7 +23,8 @@
         <td><%= customer.gender %></td>
         <td><%= customer.confirmed? %></td>
         <td><%= customer.approved? %></td>
-        <td><%= edit_link(customer) %></td>
+        <td><%= link_to "Edit", [ :edit, :api, customer ],
+          "@click.prevent" => "visit" %></td>
       </tr>
       <% end %>
     </tbody>
