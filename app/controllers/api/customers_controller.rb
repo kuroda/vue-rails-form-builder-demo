@@ -3,6 +3,10 @@ class Api::CustomersController < ApplicationController
 
   def index
     @customers = Customer.order(:id)
+      .select([ :id, :name, :plan, :gender, :confirmed, :approved])
+    template = render_to_string(template: "api/customers/index", layout: false)
+    data = { customers: @customers }
+    render json: { template: template, data: data }
   end
 
   def new
@@ -34,6 +38,16 @@ class Api::CustomersController < ApplicationController
     else
       render action: "edit"
     end
+  end
+
+  def destroy
+    customer = Customer.find(params[:id])
+    customer.destroy
+
+    @customers = Customer.order(:id)
+      .select([ :id, :name, :plan, :gender, :confirmed, :approved])
+    data = { customers: @customers }
+    render json: { data: data }
   end
 
   private def customer_params

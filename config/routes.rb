@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   resources :customers, except: [ :show, :destroy ]
   namespace :api do
-    resources :customers, except: [ :show, :destroy ]
+    resources :customers, except: [ :show ]
   end
 end

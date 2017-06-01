@@ -1,5 +1,6 @@
 import Vue from "vue/dist/vue.esm"
 import VueRemoteTemplate from "vue-remote-template"
+import { index } from "../../extensions/index"
 import { newForm } from "../../extensions/new_form"
 import { editForm } from "../../extensions/edit_form"
 
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     data: {
       templatePath: "/api/customers",
       extensions: {
-        index: {},
+        index: index,
         newForm: newForm,
         editForm: editForm
       }

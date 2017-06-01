@@ -16,17 +16,19 @@
       </tr>
     </thead>
     <tbody>
-      <% @customers.each do |customer| %>
-      <tr>
-        <td><%= customer.name %></td>
-        <td><%= customer.plan %></td>
-        <td><%= customer.gender %></td>
-        <td><%= customer.confirmed? %></td>
-        <td><%= customer.approved? %></td>
-        <td><%= link_to "Edit", [ :edit, :api, customer ],
-          "@click.prevent" => "visit" %></td>
+      <tr v-for="customer in customers">
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.plan }}</td>
+        <td>{{ customer.gender }}</td>
+        <td>{{ customer.confirmed }}</td>
+        <td>{{ customer.approved }}</td>
+        <td>
+          <%= link_to "Edit",
+            ":href" => "'/api/customers' + customer.id + '/edit'",
+            "@click.prevent" => "visit" %>
+          <span class="link" @click="destroy(customer)">Delete</span>
+        </td>
       </tr>
-      <% end %>
     </tbody>
   </table>
 </div>
