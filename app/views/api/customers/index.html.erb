@@ -23,9 +23,8 @@
         <td>{{ customer.confirmed }}</td>
         <td>{{ customer.approved }}</td>
         <td>
-          <%= content_tag :a, "Edit",
-            ":href" => "'/api/customers/' + customer.id + '/edit'",
-            "@click.prevent" => "visit" %>
+          <a :href="'/api/customers/' + customer.id + '/edit'"
+            @click.prevent="visit">Edit</a>
           <span class="link" @click="destroy(customer)">Delete</span>
         </td>
       </tr>
