@@ -1,0 +1,50 @@
+<section class="section section-hero text-center">
+  <h3>vue-rails-form-builder-demo</h3>
+  <p>Demo Application and Reference Implementation.</p>
+</section>
+
+<section class="section section-features bg-gray">
+  <div class="container grid-lg">
+    <div class="columns">
+      <div class="column col-4 col-xs-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h6">Static Form</div>
+          </div>
+          <div class="card-body">
+            Static form markup, with vuejs debug output
+          </div>
+          <div class="card-footer">
+            <%= link_to "Static Form", :static, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+      <div class="column col-4 col-xs-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h6">Database Scaffold Form</div>
+          </div>
+          <div class="card-body">
+            Rails CRUD scaffold for a customer model
+          </div>
+          <div class="card-footer">
+            <%= link_to "Database Scaffold Form", :customers, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+      <div class="column col-4 col-xs-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h6">Single Page App</div>
+          </div>
+          <div class="card-body">
+            Basic SPA, with rails build in webpacker setup
+          </div>
+          <div class="card-footer">
+            <%= link_to "Single Page App", :spa, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

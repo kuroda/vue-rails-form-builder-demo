@@ -1,10 +1,15 @@
-<div data-title="List of customers" data-extension="index"
-  data-url="#customers">
-  <div>
-    <%= link_to "New customer", :new_api_customer, "@click.prevent" => "visit" %>
-  </div>
+<div data-title="List of customers" data-extension="index" data-url="#customers">
 
-  <table>
+  <table class="table table-striped table-hover">
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <%= link_to :new_api_customer, class: "btn btn-primary", "@click.prevent" => "visit" do %>
+            <i class="icon icon-plus"></i> New customer
+          <% end %>
+        </td>
+      </tr>
+    </tfoot>
     <thead>
       <tr>
         <th>Name</th>
@@ -23,9 +28,8 @@
         <td>{{ customer.confirmed }}</td>
         <td>{{ customer.approved }}</td>
         <td>
-          <a :href="'/api/customers/' + customer.id + '/edit'"
-            @click.prevent="visit">Edit</a>
-          <span class="link" @click="destroy(customer)">Delete</span>
+          <a :href="'/api/customers/' + customer.id + '/edit'" @click.prevent="visit">Edit</a>
+          <a href="#!destroy" @click="destroy(customer)">Delete</a>
         </td>
       </tr>
     </tbody>

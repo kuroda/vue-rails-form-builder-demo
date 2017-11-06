@@ -1,0 +1,124 @@
+<% content_for :breadcrumb do %>
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Home", :root %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Static", :static %>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="#">Form</a>
+    </li>
+  </ul>
+<% end %>
+
+<div class="columns" id="customer-form">
+  <div class="column col-5">
+    <form>
+      <div class="form-group">
+        <label class="form-label">Name</label>
+        <input class="form-input" type="text" v-model="customer.name" name="customer[name]" value="John">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Plan</label>
+        <label class="form-radio">
+          <input type="radio" v-model="customer.plan" name="customer[plan]" value="Alpha" checked>
+          <i class="form-icon"></i> Alpha
+        </label>
+        <label class="form-radio">
+          <input type="radio" v-model="customer.plan" name="customer[plan]" value="Beta">
+          <i class="form-icon"></i> Beta
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="form-checkbox">
+          <input type="hidden" v-model="customer.confirmed" name="customer[confirmed]" value="0">
+          <input type="checkbox" v-model="customer.confirmed" name="customer[confirmed]" value="1" checked>
+          <i class="form-icon"></i> Cofirmed
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="form-checkbox">
+          <input type="hidden" v-model="customer.approved" name="customer[approved]" value="0">
+          <input type="checkbox" v-model="customer.approved" name="customer[approved]" value="1">
+          <i class="form-icon"></i> Approved
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Colors</label>
+        <label class="form-checkbox">
+          <input type="checkbox" v-model="customer.colors" name="customer[colors]" value="red" checked>
+          <i class="form-icon"></i> Red
+        </label>
+        <label class="form-checkbox">
+          <input type="checkbox" v-model="customer.colors" name="customer[colors]" value="green" checked>
+          <i class="form-icon"></i> Green
+        </label>
+        <label class="form-checkbox">
+          <input type="checkbox" v-model="customer.colors" name="customer[colors]" value="blue">
+          <i class="form-icon"></i> Blue
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Remember</label>
+        <label class="form-switch">
+          <input type="hidden" v-model="customer.remember" name="customer[remember]" value="0">
+          <input type="checkbox" v-model="customer.remember" name="customer[remember]" value="1" checked>
+          <i class="form-icon"></i> Remember me
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Gender</label>
+        <select class="form-select" v-model="customer.gender" name="customer[gender]">
+          <option value="male">Male</option>
+          <option value="female" selected>Female</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Tags</label>
+        <select class="form-select" v-model="customer.tags" name="customer[tags]" multiple>
+          <option value="x" selected>x</option>
+          <option value="y">Y</option>
+          <option value="z" selected>Z</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Remarks</label>
+        <textarea  class="form-input" v-model="customer.remarks" name="customer[remarks]" rows="3">Good</textarea>
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="column col-5 col-ml-auto">
+    <p class="mb-2">Debug</p>
+    <div v-cloak>
+      <div class="btn-group btn-group-block">
+        <button class="btn" @click.prevent="open = true" :class="{ active: open }">Show</button>
+        <button class="btn" @click.prevent="open = false" :class="{ active: !open }">Hide</button>
+      </div>
+      <div>
+        <pre v-if="open" class="code" data-lang="Vuejs data"><code>customer.name = "{{customer.name}}"
+customer.plan = "{{customer.plan}}"
+customer.confirmed = {{customer.confirmed}}
+customer.approved = {{customer.approved}}
+customer.colors = {{customer.colors}}
+customer.remember = {{customer.remember}}
+customer.gender = {{customer.gender}}
+customer.tags = {{customer.tags}}
+customer.remarks = "{{customer.remarks}}"</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag "static" %>

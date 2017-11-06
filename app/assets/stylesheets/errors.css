@@ -1,9 +1,0 @@
-div.field_with_errors {
-  display: inline;
-}
-div.field_with_errors label {
-  color: red;
-}
-div.field_with_errors input {
-  background-color: pink;
-}

@@ -1,13 +1,23 @@
 <div data-title="New Customer" data-extension="newForm">
-  <div>
-    <%= link_to "List of customers", :api_customers, "@click.prevent" => "visit" %>
-  </div>
+
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Home", :root %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "SPA", :spa %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "List", :api_customers, "@click.prevent" => "visit" %>
+    </li>
+  </ul>
 
   <%= vue_form_with model: [ :api, @customer ], id: "customer-form",
     html: { "@submit.prevent" => "submit" } do |f| %>
     <%= render "fields", f: f %>
-    <div>
-      <%= f.submit "Create" %>
+
+    <div class="form-group">
+      <%= f.submit "Create", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>

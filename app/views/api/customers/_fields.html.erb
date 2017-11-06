@@ -1,43 +1,54 @@
-<div>
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %>
+<div class="form-group">
+  <%= f.label :name, "Name", class: "form-label" %>
+  <%= f.text_field :name, class: "form-input" %>
 </div>
-<div>
-  <%= f.label :plan, "Plan" %>
-  <label>
-    <%= f.radio_button :plan, "A" %> A
+
+<div class="form-group">
+  <%= f.label :plan, "Plan", class: "form-label" %>
+  <label class="form-radio">
+    <%= f.radio_button :plan, "Alpha" %>
+    <i class="form-icon"></i> Alpha
   </label>
-  <label>
-    <%= f.radio_button :plan, "B" %> B
-  </label>
-</div>
-<div>
-  <%= f.label :gender, "Gender" %>
-  <%= f.select :gender, [ [ "Male", "male" ], [ "Female", "female" ] ],
-    include_blank: true %>
-</div>
-<div>
-  <label>
-    <%= f.check_box :confirmed %> Confirmed
-  </label>
-  <label>
-    <%= f.check_box :approved %> Approved
+  <label class="form-radio">
+    <%= f.radio_button :plan, "Beta" %>
+    <i class="form-icon"></i> Beta
   </label>
 </div>
-<div>
-  <%= f.label :remarks, "Remarks" %>
-  <%= f.text_area :remarks %>
+
+<div class="form-group">
+  <%= f.label :gender, "Gender", class: "form-label" %>
+  <%= f.select :gender, [ [ "Male", "male" ], [ "Female", "female" ] ], { include_blank: true }, class: "form-select" %>
 </div>
-<div v-cloak style="border: solid 1px black; padding: 10px; margin: 10px">
-  <button type="button" @click="open = true" v-if="!open">Show Vue component data</button>
-  <button type="button" @click="open = false" v-if="open">Hide</button>
-  <div v-if="open">
-      <div>customer.name = "{{customer.name}}"</div>
-      <div>customer.plan = "{{customer.plan}}"</div>
-      <div>customer.gender = {{customer.gender}}</div>
-      <div>customer.confirmed = {{customer.confirmed}}</div>
-      <div>customer.approved = {{customer.approved}}</div>
-      <div>customer.remarks = "{{customer.remarks}}"</div>
-      <div>open = "{{open}}"</div>
+
+<div class="form-group">
+  <label class="form-checkbox">
+    <%= f.check_box :confirmed %>
+    <i class="form-icon"></i> Confirmed
+  </label>
+</div>
+
+<div class="form-group">
+  <label class="form-checkbox">
+    <%= f.check_box :approved %>
+    <i class="form-icon"></i> Approved
+  </label>
+</div>
+
+<div class="form-group">
+  <%= f.label :remarks, "Remarks", class: "form-label" %>
+  <%= f.text_area :remarks, class: "form-input" %>
+</div>
+
+<div v-cloak class="form-group">
+  <div class="btn-group btn-group-block">
+    <button class="btn" @click.prevent="open = true" :class="{ active: open }">Show</button>
+    <button class="btn" @click.prevent="open = false" :class="{ active: !open }">Hide</button>
   </div>
+  <pre v-if="open" class="code" data-lang="Vuejs data"><code>customer.name = "{{customer.name}}"
+customer.plan = "{{customer.plan}}"
+customer.gender = {{customer.gender}}
+customer.confirmed = {{customer.confirmed}}
+customer.approved = {{customer.approved}}
+customer.remarks = "{{customer.remarks}}"
+open = "{{open}}"</code></pre>
 </div>

@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>VueRailsFormBuilderDemo</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-  </head>
+<% content_for :body do %>
+  <div class="container grid-lg">
+    <%= content_for?(:breadcrumb) ? yield(:breadcrumb) : render("breadcrumb") rescue nil %>
 
-  <body>
     <%= yield %>
-  </body>
-</html>
+  </div>
+<% end %>
+
+<%= render template: "layouts/application_base" %>

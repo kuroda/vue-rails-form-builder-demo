@@ -1,0 +1,11 @@
+// vuejs brand color
+$primary-color: #4fc08d;
+
+// spectre lib
+@import "spectre";
+@import "spectre/spectre-icons";
+
+// extends
+@import "errors";
+@import "vue";
+@import "section";

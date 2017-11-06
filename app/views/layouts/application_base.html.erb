@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VueRailsFormBuilderDemo</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+  </head>
+
+  <body>
+    <%= render "header" %>
+
+    <%= content_for?(:body) ? yield(:body) : yield %>
+
+    <%= render "footer" %>
+  </body>
+</html>
