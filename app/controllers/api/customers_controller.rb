@@ -50,8 +50,16 @@ class Api::CustomersController < ApplicationController
     render json: { data: data }
   end
 
-  private def customer_params
-    params.require(:customer).permit(
-      :name, :plan, :gender, :confirmed, :approved, :remarks)
-  end
+  private
+
+    def customer_params
+      params.require(:customer).permit(
+        :name,
+        :plan,
+        :gender,
+        :confirmed,
+        :approved,
+        :remarks
+      )
+    end
 end

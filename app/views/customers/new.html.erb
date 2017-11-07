@@ -1,14 +1,23 @@
-<h1>Form for new customer</h1>
-
-<div>
-  <%= link_to "List of customers", :customers %>
-</div>
+<% content_for :breadcrumb do %>
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Home", :root %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Customers", :customers %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "New", :new_customer %>
+    </li>
+  </ul>
+<% end %>
 
 <%= vue_form_with model: @customer, id: "customer-form" do |f| %>
   <%= render "fields", f: f %>
-  <div>
-    <%= f.submit "Create" %>
+
+  <div class="form-group">
+    <%= f.submit "Create", class: "btn btn-primary" %>
   </div>
 <% end %>
 
-<%= javascript_pack_tag 'customers/fields' %>
+<%= javascript_pack_tag "customers" %>

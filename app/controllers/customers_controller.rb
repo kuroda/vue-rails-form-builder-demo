@@ -30,8 +30,15 @@ class CustomersController < ApplicationController
     end
   end
 
-  private def customer_params
-    params.require(:customer).permit(
-      :name, :plan, :gender, :confirmed, :approved, :remarks)
-  end
+  private
+    def customer_params
+      params.require(:customer).permit(
+        :name,
+        :plan,
+        :gender,
+        :confirmed,
+        :approved,
+        :remarks
+      )
+    end
 end

@@ -1,8 +1,8 @@
 import Vue from "vue/dist/vue.esm"
 import VueRemoteTemplate from "vue-remote-template"
-import { index } from "../../extensions/index"
-import { newForm } from "../../extensions/new_form"
-import { editForm } from "../../extensions/edit_form"
+import { index } from "../spa/index"
+import { newForm } from "../spa/new_form"
+import { editForm } from "../spa/edit_form"
 
 Vue.config.productionTip = false
 

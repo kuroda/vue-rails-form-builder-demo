@@ -1,0 +1,8 @@
+.field_with_errors {
+  display: inline;
+  @extend .has-error;
+}
+
+.field_with_errors ~ .form-icon {
+  border: 1px solid $error-color;
+}
