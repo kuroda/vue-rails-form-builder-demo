@@ -23,6 +23,30 @@
 </div>
 
 <div class="form-group">
+  <%= f.label :phones, "Phones", class: "form-label" %>
+  <ol>
+    <%= f.fields_for :phones do |pf| %>
+      <li>
+        <%= pf.text_field :number, class: "form-input d-inline",
+          style: "width: 50%; margin-right: 40px",
+          ":disabled" => "customer.phones_attributes[#{pf.index}]._destroy" %>
+        <label class="form-checkbox">
+          <%= pf.check_box :primary,
+            ":disabled" => "customer.phones_attributes[#{pf.index}]._destroy" %>
+          <i class="form-icon"></i> Primary
+        </label>
+        <% if pf.object.persisted? %>
+          <label class="form-checkbox">
+            <%= pf.check_box :_destroy %>
+            <i class="form-icon"></i> Delete
+          </label>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+</div>
+
+<div class="form-group">
   <label class="form-checkbox">
     <%= f.check_box :confirmed %>
     <i class="form-icon"></i> Confirmed
@@ -48,6 +72,7 @@
 customerNameLength = {{customerNameLength}}
 customer.plan = "{{customer.plan}}"
 customer.gender = {{customer.gender}}
+customer.phones_attributes = {{customer.phones_attributes}}
 customer.confirmed = {{customer.confirmed}}
 customer.approved = {{customer.approved}}
 customer.remarks = "{{customer.remarks}}"

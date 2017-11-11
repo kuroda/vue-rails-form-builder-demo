@@ -5,10 +5,12 @@ class CustomersController < ApplicationController
 
   def new
     @customer = Customer.new
+    populate_phones
   end
 
   def edit
     @customer = Customer.find(params[:id])
+    populate_phones
   end
 
   def create
@@ -16,6 +18,7 @@ class CustomersController < ApplicationController
     if @customer.save
       redirect_to :customers
     else
+      populate_phones
       render action: "new"
     end
   end
@@ -26,19 +29,26 @@ class CustomersController < ApplicationController
     if @customer.save
       redirect_to :customers
     else
+      populate_phones
       render action: "edit"
     end
   end
 
-  private
-    def customer_params
-      params.require(:customer).permit(
-        :name,
-        :plan,
-        :gender,
-        :confirmed,
-        :approved,
-        :remarks
-      )
+  private def populate_phones
+    (3 - @customer.phones.size).times do
+      @customer.phones.build
     end
+  end
+
+  private def customer_params
+    params.require(:customer).permit(
+      :name,
+      :plan,
+      :gender,
+      :confirmed,
+      :approved,
+      :remarks,
+      :phones_attributes => [ :id, :number, :primary, :_destroy ]
+    )
+  end
 end

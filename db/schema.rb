@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511073027) do
+ActiveRecord::Schema.define(version: 20171111044841) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name", null: false
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20170511073027) do
     t.boolean "approved", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "phones", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.string "number", null: false
+    t.boolean "primary", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_phones_on_customer_id"
   end
 
 end
