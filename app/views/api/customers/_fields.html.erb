@@ -27,10 +27,10 @@
       <li>
         <%= pf.text_field :number, class: "form-input d-inline",
           style: "width: 50%; margin-right: 40px",
-          ":disabled" => "customer.phones_attributes[#{pf.index}]._destroy" %>
+          bind: { disabled: "customer.phones_attributes[#{pf.index}]._destroy" } %>
         <label class="form-checkbox">
           <%= pf.check_box :primary,
-            ":disabled" => "customer.phones_attributes[#{pf.index}]._destroy" %>
+            bind: { disabled: "customer.phones_attributes[#{pf.index}]._destroy" } %>
           <i class="form-icon"></i> Primary
         </label>
         <% if pf.object.persisted? %>
