@@ -27,10 +27,10 @@
       <li>
         <%= pf.text_field :number, class: "form-input d-inline",
           style: "width: 50%; margin-right: 40px",
-          bind: { disabled: pf.vue_prefix + "._destroy" } %>
+          disabled: pf.vue_prefix + "._destroy" %>
         <label class="form-checkbox">
           <%= pf.check_box :primary,
-            bind: { disabled: pf.vue_prefix + "._destroy" } %>
+            disabled: pf.vue_prefix + "._destroy" %>
           <i class="form-icon"></i> Primary
         </label>
         <% if pf.object.persisted? %>
