@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'spectre_scss', '~> 0.4.5'
 
 gem 'webpacker'
-gem 'vue-rails-form-builder', '~> 0.7.0'
+gem 'vue-rails-form-builder', '~> 0.8.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
