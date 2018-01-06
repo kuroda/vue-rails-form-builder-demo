@@ -26,23 +26,12 @@
   <%= f.label :phones, "Phones", class: "form-label" %>
   <ol>
     <%= f.fields_for :phones do |pf| %>
-      <li>
-        <%= pf.text_field :number, class: "form-input d-inline",
-          style: "width: 50%; margin-right: 40px",
-          disabled: pf.vue_prefix + "._destroy" %>
-        <label class="form-checkbox">
-          <%= pf.check_box :primary,
-            disabled: pf.vue_prefix + "._destroy" %>
-          <i class="form-icon"></i> Primary
-        </label>
-        <% if pf.object.persisted? %>
-          <label class="form-checkbox">
-            <%= pf.check_box :_destroy %>
-            <i class="form-icon"></i> Delete
-          </label>
-        <% end %>
-      </li>
+      <%= pf.hidden_field :number %>
     <% end %>
+    <li v-for="(p, index) in customer.phones_attributes">
+      <input type="text" :name="'customer[phones_attributes][' + index + ']'"
+        v-model="customer.phones_attributes[index].number">
+    </li>
   </ol>
 </div>
 
