@@ -14,7 +14,7 @@
 
 <div class="columns" id="customer-form">
   <div class="column col-5">
-    <form>
+    <form enctype="multipart/form-data">
       <div class="form-group">
         <label class="form-label">Name</label>
         <input class="form-input" type="text" v-model="customer.name" name="customer[name]" value="John">
@@ -93,6 +93,11 @@
       <div class="form-group">
         <label class="form-label">Remarks</label>
         <textarea  class="form-input" v-model="customer.remarks" name="customer[remarks]" rows="3">Good</textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Avatar</label>
+        <input type="file" name="customer[avatar]">
       </div>
 
     </form>

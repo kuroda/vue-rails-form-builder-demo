@@ -129,7 +129,7 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    vue-rails-form-builder (0.8.0)
+    vue-rails-form-builder (0.8.1)
       actionview (>= 4.2, < 6)
       railties (>= 4.2, < 6)
     web-console (3.5.1)
@@ -157,7 +157,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  vue-rails-form-builder (~> 0.8.0)
+  vue-rails-form-builder (~> 0.8.1)
   web-console (>= 3.3.0)
   webpacker
 
