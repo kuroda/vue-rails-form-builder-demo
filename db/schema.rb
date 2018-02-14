@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111044841) do
+ActiveRecord::Schema.define(version: 20180214234417) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name", null: false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20171111044841) do
     t.boolean "approved", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.binary "avatar"
   end
 
   create_table "phones", force: :cascade do |t|
