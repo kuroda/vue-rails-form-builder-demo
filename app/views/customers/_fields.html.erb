@@ -69,7 +69,7 @@
 
 <div class="form-group">
   <%= f.label :avatar, class: "form-label" %>
-  <%= f.file_field :avatar, class: "form-input" %>
+  <%= f.file_field :avatar, class: "form-input", disabled: "customer.plan === 'Alpha'" %>
 </div>
 
 <div v-cloak class="form-group">
