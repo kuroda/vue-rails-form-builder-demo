@@ -1,6 +1,8 @@
 import Vue from 'vue/dist/vue.esm'
 import VueDataScooper from 'vue-data-scooper'
 
+import VueCounter from '../components/counter'
+
 Vue.config.productionTip = false
 Vue.use(VueDataScooper)
 
@@ -10,9 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     data: {
       open: true
     },
-    computed: {
-      customerNameLength: function() { return this.customer.name.length },
-      customerRemarksLength: function() { return this.customer.remarks.length },
+    components: {
+      VueCounter
     }
   })
 });

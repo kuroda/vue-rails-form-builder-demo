@@ -1,8 +1,9 @@
 <div class="form-group">
   <%= f.label :name, class: "form-label" do %>
-    Name <small v-cloak class="label label-rounded label-secondary" :class="{ 'label-warning': customerNameLength > 30, 'label-error': customerNameLength > 40 }">{{ customerNameLength }}</small>
+    Name <vue-counter v-model="customer.name" high="30" max="40"></vue-counter>
   <% end %>
   <%= f.text_field :name, class: "form-input" %>
+  <vue-counter v-bind:value="customer.name" max="50"></vue-counter>
 </div>
 
 <div class="form-group">
@@ -62,7 +63,7 @@
 
 <div class="form-group">
   <%= f.label :remarks, class: "form-label" do %>
-    Remarks <small v-cloak class="label label-rounded label-secondary">{{ customerRemarksLength }}</small>
+    Remarks <vue-counter v-model="customer.remarks"></vue-counter>
   <% end %>
   <%= f.text_area :remarks, class: "form-input" %>
 </div>
@@ -74,12 +75,10 @@
 
 <div v-cloak class="form-group">
   <pre v-if="open" class="code" data-lang="Vuejs data"><code>customer.name = "{{customer.name}}"
-customerNameLength = {{customerNameLength}}
 customer.plan = "{{customer.plan}}"
 customer.gender = {{customer.gender}}
 customer.phones_attributes = {{customer.phones_attributes}}
 customer.confirmed = {{customer.confirmed}}
 customer.approved = {{customer.approved}}
-customer.remarks = "{{customer.remarks}}"
-customerRemarksLength = {{customerRemarksLength}}</code></pre>
+customer.remarks = "{{customer.remarks}}"</code></pre>
 </div>
