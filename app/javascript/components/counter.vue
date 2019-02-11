@@ -1,6 +1,6 @@
 <template>
   <small v-cloak class="label label-rounded label-secondary" :class="style">
-    {{ value | count }}
+    {{ pretty }}
   </small>
 </template>
 
@@ -19,18 +19,17 @@ export default {
       default: "230"
     }
   },
-  filters: {
-    count: function (value) {
-      if (!value) return '0'
-      value = value.toString()
-      return value.length
-    }
-  },
   computed: {
+    count: function() {
+      return this.value ? this.value.length : '0'
+    },
+    pretty: function() {
+      return (this.count > parseInt(this.max)) ? `${this.max}+${(this.count - this.max)}` : this.count
+    },
     style: function () {
       return {
-        'label-warning': this.value.length > parseInt(this.warning),
-        'label-error': this.value.length > parseInt(this.max)
+        'label-warning': this.count > parseInt(this.high),
+        'label-error': this.count > parseInt(this.max)
       }
     }
   }
